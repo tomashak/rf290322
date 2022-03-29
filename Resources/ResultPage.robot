@@ -7,5 +7,5 @@ Zkontroluj
     [Arguments]  ${co_kontrolovat}
     Wait Until Element Is Visible     ${result_search_h2}
     ${url_after}=                     Get Location
-    Location Should Contain           ${co_kontrolovat}    message=V url mel byt string co vyhledavam. URL bylo: ${url_after}
+    Location Should Contain           ${co_kontrolovat}    message=V url mel byt string co vyhledavam, konkretne ${co_kontrolovat}. URL bylo: ${url_after}
     Capture Page Screenshot
