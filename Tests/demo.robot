@@ -2,6 +2,8 @@
 Documentation  dokumentace cele suity, informace do jiry, confluence, link na data
 ...  druhy radek
 Library      SeleniumLibrary
+Library      ExcelRobot
+
 Resource     ../Resources/MainPage.robot
 Resource     ../Resources/ResultPage.robot
 Resource     ../Resources/common.robot
@@ -16,8 +18,11 @@ Test demo shop - Dress
     ...  druhyradek dokumentace
     ...  treti radek
     [Tags]  smoke  regrese  api
-    Vyhledej    Dress
-    Zkontroluj  Dress
+    Open Excel  Data/input.xls
+    ${co_hledam}=  read cell data by name  Sheet1  A2
+    ${co_kontroluju}=  read cell data by name  Sheet1  B2
+    Vyhledej    ${co_hledam}
+    Zkontroluj  ${co_kontroluju}
     
     
 Test demo shop - Top
